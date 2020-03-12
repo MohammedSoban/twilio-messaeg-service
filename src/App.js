@@ -1,24 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import LangTest from './Lang/LangTest';
+import {IntlProvider} from 'react-intl'
+import { FormattedMessage } from "react-intl";
+import English from './Languages/en-US.json'
+import German from './Languages/du-DU.json'
+import Italian from './Languages/it-IT.json'
+import AuthTesting from './Auth/AuthTesting';
+
+const locale =navigator.language
+
+
 
 function App() {
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+  
+  <IntlProvider locale={locale} messages={German}>
+     {/* <LangTest/>     */}
+     <AuthTesting/>  
+  </IntlProvider>
+    
     </div>
   );
 }
