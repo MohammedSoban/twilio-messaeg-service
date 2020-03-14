@@ -7,6 +7,7 @@ import English from './Languages/en-US.json'
 import German from './Languages/du-DU.json'
 import Italian from './Languages/it-IT.json'
 import AuthTesting from './Auth/AuthTesting';
+import Formik from './formik/Formik';
 
 const locale =navigator.language
 
@@ -19,7 +20,8 @@ function App() {
   
   <IntlProvider locale={locale} messages={German}>
      {/* <LangTest/>     */}
-     <AuthTesting/>  
+     {/* <AuthTesting/>   */}
+     <Formik/>
   </IntlProvider>
     
     </div>
